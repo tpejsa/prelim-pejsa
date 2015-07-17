@@ -1,0 +1,11 @@
+
+Title: Animating Characters in Virtually Situated Interactions
+
+Components:
+
+1. Animating Gaze and Body Orientation
+2. Adapting Gaze to Novel Character Designs
+3. Acquisition and Analysis of Situated Interactions
+4. Editing and Synthesis of Behaviors in Situated Interactions
+5. Communication and Management of Attention in Situated Interactions?
+6. Animation Toolkit for Situated Interactions
