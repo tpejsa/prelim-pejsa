@@ -1,0 +1,96 @@
+%%% SOME OF THIS CODE IS ADAPTED FROM THE VENERABLE withesis.cls
+
+%% BEGIN PAGESTYLE
+
+%%% You can pick a pagestyle if you want; see the memoir class
+%%% documentation for more info.  The default ``deposit'' option meets
+%%% the UW thesis typesetting requirements but is probably
+%%% unsatisfactory for making a version of your dissertation that
+%%% won't be deposited to the graduate school (e.g. for web or a nice
+%%% printed copy)
+
+\chapterstyle{deposit}
+\pagestyle{deposit}
+
+\chapter{Conclusion and Expected Contributions}
+
+The goal of my research is to make it easier for animators to produce directed gaze animation for virtual characters in a range of animated scenarios, such that the resulting gaze behavior looks plausible and is effective as a mechanism for communicating the character's attention to the viewer and directing the viewer's attention in a way that facilitates positive effects such as increased engagement and learning. My proposed approach for achieving this goal is a new authoring workflow based on a combination of automated inference and manual editing, which I will employ in the context of designing effective gaze behaviors for virtual agents performing physical task demonstrations.
+
+Table~\ref{tab:overview} gives an overview of the work's components, how each component contributes to the four cornerstones of my thesis (plausibility, effectiveness, robustness, and cost-effectiveness), and how I plan to evaluate each contribution.
+
+\bgroup
+\def\arraystretch{1.5}
+\begin{sidewaystable}
+\caption{Overview of contributions and planned evaluations}
+\label{tab:overview}
+\tiny
+\begin{tabularx}{\textwidth}{|p{2.7cm}||X|X|X|X|}
+\hline
+\textbf{Component} & \textbf{Plausible} & \textbf{Effective} & \textbf{Robust} & \textbf{Cost-effective} \\
+\Xhline{2\arrayrulewidth}
+\multirow{2}{*}{1. \emph{Gaze shift model}}
+& Kinematics based on primate neurophysiology
+& Target, head and torso alignment parameters
+& \textcolor{red}{Not robust to character morphology}
+& Intuitive parametrization, automatic timing \\
+& Evaluation: head-eye model previously evaluated in~\citep{andrist2012headeye}
+& Evaluation: (1) head-eye model previously evaluated in~\citep{andrist2012headeye} and~\citep{andrist2012designing}; (2) study measuring torso alignment effects on \emph{perceived interest} (level of attention)
+& & Evaluation: see 3 and 4 \\
+\hline
+\multirow{2}{*}{2. \emph{Stylized gaze}}
+& Removes artifacts on non-human character morphologies
+& Retains the parametrization of the original model
+& Works across a range of character morphologies
+& See 1 \\
+& Evaluation: (1) simulation measuring artifact prevalence; (2) study measuring \emph{communicative accuracy} and \emph{naturalness}
+& Evaluation: study measuring \emph{communicative accuracy} and \emph{naturalness}
+& Evaluation: as for plausibility, (1)
+& \\
+\hline
+\multirow{2}{*}{3. \parbox{2.5cm}{\emph{Authoring plausible gaze}}}
+& Plausible for body motion and environment; neurophysiology-based gaze shift model
+& \textcolor{red}{Not cost-effective, requires manual editing to achieve specific gaze patterns}
+& Works across a range of body motions and environments
+& Get plausible results automatically, with optional use of an accessible manual editing tool \\
+& Evaluation: (1) simulation measuring overlap with ground truth; (2) study measuring aesthetic preference for inferred gaze motions
+& 
+& Evaluation: as for plausibility
+& Evaluation: comparison of effort required\\
+\hline
+\multirow{2}{*}{4. \parbox{2.5cm}{\emph{Authoring effective gaze}}}
+& See 3
+& Automated inference with attention parameters to achieve specific gaze patterns
+& Works across a range of body motions, environments, and attention parameter settings
+& Get effective results automatically \\
+& 
+& Evaluation: see 5
+& Evaluation: see 5
+& Evaluation: see 5 \\
+\hline
+\multirow{2}{*}{5. \parbox{2.5cm}{\emph{Effective gaze for virtual demonstrators}}}
+& 
+& Attention parameters set to obtain affiliative, referential, and neutral gaze patterns on a virtual demonstrator
+& Task demonstrations have complex body motion, environment, and gaze patterns
+& \\
+& 
+& Evaluation: study measuring the gaze effects on \emph{attention}, \emph{engagement}, \emph{task understanding}, and \emph{demonstrator credibility} and \emph{competence}
+& Evaluation: production of study stimuli
+& \\
+\hline
+\end{tabularx}
+\end{sidewaystable}
+
+%Expected contributions from this work are the following:
+%\begin{enumerate}
+%\item A procedural animation model for synthesis of directed gaze shifts as building blocks of the larger gaze behavior, with support for coordinated movement of the eyes, head, and torso.
+%\item Stylized gaze techniques for adapting gaze shift motion to characters with non-realistic and non-human morphologies.
+%\item An approach for authoring plausible directed gaze combining automated inference from body motion and environment with accessible manual editing.
+%\item An extension of the approach with automated inference of effective gaze that achieves animator-specified communicative effects.
+%\item A study of effective gaze for virtual demonstrators, that serves as an evaluation of the animation approach but also adds to the understanding of effective gaze behavior design for animated agents in an educational setting.
+%\end{enumerate}
+% TODO: some illustration of how my research projects build on each other:
+% 1. Gaze shift, \alpha_H, \alpha_T
+% 2. Gaze shift on multiple characters, \alpha_H, \alpha_T, \alpha_E
+% 3. Sequence of gaze shifts, given body motion and environment
+% 4. Sequence of gaze shifts, given body motion, environment, and high-level goals
+% 5. Application of 4. to a specific domain 
